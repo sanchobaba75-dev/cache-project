@@ -1,0 +1,16 @@
+The DRAM_test Modelsim project uses 4 files:
+
+VLSI_TestBench_pkg.vhd
+dram_ent.vhd
+dram_sim_arch.vhd
+dram_tb.vhd
+
+You will probably have to remove these files from the project and re-add them since the path to them will be differnt than the path on my machine.
+
+Add the 4 files, then order and compile them.
+Start simulation on the dram_tb model
+
+do run_dram_example
+
+Should initialize the DRAM from dram_data.srec
+Should create a log file named Log.txt

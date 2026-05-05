@@ -1,0 +1,801 @@
+# Compile of dram_ent.vhd was successful.
+# Compile of dram_sim_arch.vhd failed with 3 errors.
+# Compile of dram_tb.vhd failed with 3 errors.
+# Compile of VLSI_TestBench_pkg.vhd was successful with warnings.
+# 4 compiles, 2 failed with 6 errors.
+# Compile of dram_ent.vhd was successful.
+# Compile of dram_sim_arch.vhd was successful.
+# Compile of dram_tb.vhd was successful.
+# Compile of VLSI_TestBench_pkg.vhd was successful with warnings.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.dram_tb
+# vsim -gui work.dram_tb 
+# Start time: 11:13:50 on Apr 28,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.vlsi_testbench_pkg(body)
+# Loading work.dram_tb(test_bench)
+# Loading work.dram(sim)
+# WARNING: No extended dataflow license exists
+do run_dram_example.do
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Initializing DRAM: :dram_tb:s1:init_mem[ram_array,string]: from: dram_data.srec.
+#   S-record format S7 is not supported. (Ignored)
+# ** Note: Test completed with no errors
+#    Time: 2135 ns  Iteration: 0  Instance: /dram_tb
+# End time: 14:14:39 on Apr 29,2026, Elapsed time: 27:00:49
+# Errors: 0, Warnings: 1
+# Closing project C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/DRAM.mpf
+# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini
+# Loading project Lab10_cache
+vsim -gui work.cache_tb
+# vsim -gui work.cache_tb 
+# Start time: 14:15:03 on Apr 29,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.vlsi_testbench_pkg(body)
+# Loading work.cache_tb(test_bench)
+# Loading work.clk_gen(test)
+# Loading work.cache_pkg(body)
+# Loading work.cache(rtl)
+# Loading work.sync_2a_sram(sim)
+# Loading work.dram_cntl(rtl)
+# Loading work.dram(sim)
+# Loading work.drive_bit(test)
+# Loading work.drive_bus(test)
+# Loading work.check_bus(test)
+# Loading work.check_bit(test)
+# WARNING: No extended dataflow license exists
+run -all
+# Enter test name (or "quit"):
+>> tests/testlist
+# Start main_test: tests/testlist
+# Start test file: tests/test_cache_read_miss_then_hit
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_rdata Exp: FFFFFFFF Got: 00000000
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_rdata Exp: FFFFFFFB Got: 00000000
+# ** Note:     There were ERRORS in the test.
+#    Time: 380 ns  Iteration: 0  Instance: /cache_tb
+# Enter test name (or "quit"):
+>> quit
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cache_pkg
+# -- Compiling entity cache
+# -- Compiling architecture rtl of cache
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cache_pkg
+# -- Compiling package body cache_pkg
+# -- Loading package cache_pkg
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity cache_tb
+# -- Compiling architecture test_bench of cache_tb
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram_cntl
+# -- Compiling architecture rtl of dram_cntl
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of dram
+# -- Loading entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of sync_2a_sram
+# -- Loading entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package VLSI_TestBench_pkg
+# ** Warning: C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd(21): (vcom-1236) Shared variables must be of a protected type.
+# -- Compiling package body VLSI_TestBench_pkg
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity drive_bit
+# -- Compiling architecture test of drive_bit
+# -- Compiling entity drive_bus
+# -- Compiling architecture test of drive_bus
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity check_bit
+# -- Compiling architecture test of check_bit
+# -- Compiling entity check_bus
+# -- Compiling architecture test of check_bus
+# -- Compiling entity clk_gen
+# -- Compiling architecture test of clk_gen
+# 
+# 
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.vlsi_testbench_pkg(body)
+# Loading work.cache_tb(test_bench)
+# Loading work.clk_gen(test)
+# Loading work.cache_pkg(body)
+# Loading work.cache(rtl)
+# Loading work.sync_2a_sram(sim)
+# Loading work.dram_cntl(rtl)
+# Loading work.dram(sim)
+# Loading work.drive_bit(test)
+# Loading work.drive_bus(test)
+# Loading work.check_bus(test)
+# Loading work.check_bit(test)
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Enter test name (or "quit"):
+>> tests/testlist
+# Start main_test: tests/testlist
+# Start test file: tests/test_cache_read_miss_then_hit
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_rdata Exp: FFFFFFFF Got: 00000000
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_rdata Exp: FFFFFFFB Got: 00000000
+# ** Note:     There were ERRORS in the test.
+#    Time: 380 ns  Iteration: 0  Instance: /cache_tb
+# Enter test name (or "quit"):
+>> quit
+restart -f
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Enter test name (or "quit"):
+>> tests/testlist
+# Start main_test: tests/testlist
+# Start test file: tests/test_cache_read_miss_then_hit
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_rdata Exp: FFFFFFFF Got: 00000000
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_rdata Exp: FFFFFFFB Got: 00000000
+# ** Note:     There were ERRORS in the test.
+#    Time: 380 ns  Iteration: 0  Instance: /cache_tb
+# Enter test name (or "quit"):
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cache_pkg
+# -- Compiling entity cache
+# -- Compiling architecture rtl of cache
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cache_pkg
+# -- Compiling package body cache_pkg
+# -- Loading package cache_pkg
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity cache_tb
+# -- Compiling architecture test_bench of cache_tb
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram_cntl
+# -- Compiling architecture rtl of dram_cntl
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of dram
+# -- Loading entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of sync_2a_sram
+# -- Loading entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package VLSI_TestBench_pkg
+# ** Warning: C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd(21): (vcom-1236) Shared variables must be of a protected type.
+# -- Compiling package body VLSI_TestBench_pkg
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity drive_bit
+# -- Compiling architecture test of drive_bit
+# -- Compiling entity drive_bus
+# -- Compiling architecture test of drive_bus
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity check_bit
+# -- Compiling architecture test of check_bit
+# -- Compiling entity check_bus
+# -- Compiling architecture test of check_bus
+# -- Compiling entity clk_gen
+# -- Compiling architecture test of clk_gen
+# 
+# 
+# 9 compiles, 0 failed with no errors.
+>> quit
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.vlsi_testbench_pkg(body)
+# Loading work.cache_tb(test_bench)
+# Loading work.clk_gen(test)
+# Loading work.cache_pkg(body)
+# Loading work.cache(rtl)
+# Loading work.sync_2a_sram(sim)
+# Loading work.dram_cntl(rtl)
+# Loading work.dram(sim)
+# Loading work.drive_bit(test)
+# Loading work.drive_bus(test)
+# Loading work.check_bus(test)
+# Loading work.check_bit(test)
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Enter test name (or "quit"):
+>> tests/testlist
+# Start main_test: tests/testlist
+# Start test file: tests/test_cache_read_miss_then_hit
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 25 Time: 225 ns Mismatch: cpu_ready Exp: 0 Got: 1
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_rdata Exp: FFFFFFFF Got: 00000000
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_rdata Exp: FFFFFFFB Got: 00000000
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 40 Time: 375 ns Mismatch: cpu_ready Exp: 0 Got: 1
+# ** Note:     There were ERRORS in the test.
+#    Time: 380 ns  Iteration: 0  Instance: /cache_tb
+# Enter test name (or "quit"):
+>> quit
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cache_pkg
+# -- Compiling entity cache
+# -- Compiling architecture rtl of cache
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cache_pkg
+# -- Compiling package body cache_pkg
+# -- Loading package cache_pkg
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity cache_tb
+# -- Compiling architecture test_bench of cache_tb
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram_cntl
+# -- Compiling architecture rtl of dram_cntl
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of dram
+# -- Loading entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of sync_2a_sram
+# -- Loading entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package VLSI_TestBench_pkg
+# ** Warning: C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd(21): (vcom-1236) Shared variables must be of a protected type.
+# -- Compiling package body VLSI_TestBench_pkg
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity drive_bit
+# -- Compiling architecture test of drive_bit
+# -- Compiling entity drive_bus
+# -- Compiling architecture test of drive_bus
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity check_bit
+# -- Compiling architecture test of check_bit
+# -- Compiling entity check_bus
+# -- Compiling architecture test of check_bus
+# -- Compiling entity clk_gen
+# -- Compiling architecture test of clk_gen
+# 
+# 
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.vlsi_testbench_pkg(body)
+# Loading work.cache_tb(test_bench)
+# Loading work.clk_gen(test)
+# Loading work.cache_pkg(body)
+# Loading work.cache(rtl)
+# Loading work.sync_2a_sram(sim)
+# Loading work.dram_cntl(rtl)
+# Loading work.dram(sim)
+# Loading work.drive_bit(test)
+# Loading work.drive_bus(test)
+# Loading work.check_bus(test)
+# Loading work.check_bit(test)
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Enter test name (or "quit"):
+>> tests/testlist
+# Start main_test: tests/testlist
+# Start test file: tests/test_cache_read_miss_then_hit
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_rdata Exp: FFFFFFFF Got: 00000000
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_rdata Exp: FFFFFFFB Got: 00000000
+# ** Note:     There were ERRORS in the test.
+#    Time: 380 ns  Iteration: 0  Instance: /cache_tb
+# Enter test name (or "quit"):
+>> quit
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cache_pkg
+# -- Compiling entity cache
+# -- Compiling architecture rtl_v2 of cache
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cache_pkg
+# -- Compiling package body cache_pkg
+# -- Loading package cache_pkg
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity cache_tb
+# -- Compiling architecture test_bench of cache_tb
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram_cntl
+# -- Compiling architecture rtl of dram_cntl
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of dram
+# -- Loading entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of sync_2a_sram
+# -- Loading entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package VLSI_TestBench_pkg
+# ** Warning: C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd(21): (vcom-1236) Shared variables must be of a protected type.
+# -- Compiling package body VLSI_TestBench_pkg
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity drive_bit
+# -- Compiling architecture test of drive_bit
+# -- Compiling entity drive_bus
+# -- Compiling architecture test of drive_bus
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity check_bit
+# -- Compiling architecture test of check_bit
+# -- Compiling entity check_bus
+# -- Compiling architecture test of check_bus
+# -- Compiling entity clk_gen
+# -- Compiling architecture test of clk_gen
+# 
+# 
+# 9 compiles, 0 failed with no errors.
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.vlsi_testbench_pkg(body)
+# Loading work.cache_tb(test_bench)
+# Loading work.clk_gen(test)
+# Loading work.cache_pkg(body)
+# Loading work.cache(rtl_v2)
+# Loading work.sync_2a_sram(sim)
+# Loading work.dram_cntl(rtl)
+# Loading work.dram(sim)
+# Loading work.drive_bit(test)
+# Loading work.drive_bus(test)
+# Loading work.check_bus(test)
+# Loading work.check_bit(test)
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Enter test name (or "quit"):
+>> tests/testlist
+# Start main_test: tests/testlist
+# Start test file: tests/test_cache_read_miss_then_hit
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_rdata Exp: FFFFFFFF Got: 00000000
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_rdata Exp: FFFFFFFB Got: 00000000
+# ** Note:     There were ERRORS in the test.
+#    Time: 380 ns  Iteration: 0  Instance: /cache_tb
+# Enter test name (or "quit"):
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package cache_pkg
+# -- Compiling entity cache
+# -- Compiling architecture rtl of cache
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package cache_pkg
+# -- Compiling package body cache_pkg
+# -- Loading package cache_pkg
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity cache_tb
+# -- Compiling architecture test_bench of cache_tb
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram_cntl
+# -- Compiling architecture rtl of dram_cntl
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of dram
+# -- Loading entity dram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling architecture sim of sync_2a_sram
+# -- Loading entity sync_2a_sram
+# 
+# 
+# vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd
+# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling package VLSI_TestBench_pkg
+# ** Warning: C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd(21): (vcom-1236) Shared variables must be of a protected type.
+# -- Compiling package body VLSI_TestBench_pkg
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity drive_bit
+# -- Compiling architecture test of drive_bit
+# -- Compiling entity drive_bus
+# -- Compiling architecture test of drive_bus
+# -- Loading package VLSI_TestBench_pkg
+# -- Compiling entity check_bit
+# -- Compiling architecture test of check_bit
+# -- Compiling entity check_bus
+# -- Compiling architecture test of check_bus
+# -- Compiling entity clk_gen
+# -- Compiling architecture test of clk_gen
+# 
+# 
+# 9 compiles, 0 failed with no errors.
+>> quit
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.vlsi_testbench_pkg(body)
+# Loading work.cache_tb(test_bench)
+# Loading work.clk_gen(test)
+# Loading work.cache_pkg(body)
+# Loading work.cache(rtl)
+# Loading work.sync_2a_sram(sim)
+# Loading work.dram_cntl(rtl)
+# Loading work.dram(sim)
+# Loading work.drive_bit(test)
+# Loading work.drive_bus(test)
+# Loading work.check_bus(test)
+# Loading work.check_bit(test)
+run -all
+# GetModuleFileName: The specified module could not be found.
+# 
+# 
+# Enter test name (or "quit"):
+>> tests/testlist
+# Start main_test: tests/testlist
+# Start test file: tests/test_cache_read_miss_then_hit
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Initializing DRAM: :cache_tb:s1:init_mem[ram_array,string]: from: DRAMsystem_dram.srec.
+#   S-record format S7 is not supported. (Ignored)
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 37 Time: 345 ns Mismatch: cpu_rdata Exp: FFFFFFFF Got: 00000000
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_ready Exp: 1 Got: 0
+# Main test: tests/testlist Test: tests/test_cache_read_miss_then_hit Line: 39 Time: 365 ns Mismatch: cpu_rdata Exp: FFFFFFFB Got: 00000000
+# ** Note:     There were ERRORS in the test.
+#    Time: 380 ns  Iteration: 0  Instance: /cache_tb
+# Enter test name (or "quit"):
+# Break key hit
+>> quit
+# Break in Process input_regs at C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd line 62
+# End time: 20:34:28 on Apr 29,2026, Elapsed time: 6:19:25
+# Errors: 0, Warnings: 2

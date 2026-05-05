@@ -1,0 +1,13 @@
+The DRAM_test Modelsim project uses 3 files:
+
+VLSI_TestBench_pkg.vhd
+dram_cntl.vhd
+dram_cntl_tb.vhd
+
+You will probably have to remove these files from the project and re-add them since the path to them will be differnt than the path on my machine.
+
+Add the 3 files, then order and compile them.
+Start simulation on the dram_tb model
+
+do run_dram_cntl_example
+

@@ -1,0 +1,15 @@
+vsim -gui work.sync_2a_tb
+# vsim -gui work.sync_2a_tb 
+# Start time: 12:18:23 on May 02,2026
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.vlsi_testbench_pkg(body)
+# Loading work.sync_2a_tb(test_bench)
+# Loading work.clk_gen(test)
+# Loading work.sync_2a_sram(sim)
+# WARNING: No extended dataflow license exists
+# End time: 12:19:21 on May 02,2026, Elapsed time: 0:00:58
+# Errors: 0, Warnings: 1
+# Closing project C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/SYNC_2A_SRAM.mpf

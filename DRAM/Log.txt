@@ -1,0 +1,13 @@
+  248 ns:  Read: 00100: AAAAAAAA
+  458 ns: Write: 00100: 01234567 Bytes: 1111
+  703 ns: Write: 00104: 89ABCDEF Bytes: 1111
+  878 ns:  Refresh
+ 1123 ns:  Read: 00100: 01234567
+ 1333 ns:  Read: 00100: 01234567
+ 1403 ns:  Read: 00104: 89ABCDEF
+ 1473 ns:  Read: 00108: 76543210
+ 1543 ns:  Read: 0010C: FEDCBA98
+ 1753 ns:  Read: 00110: 00000000
+ 1823 ns:  Read: 00114: 00000000
+ 1893 ns:  Read: 00118: 00000000
+ 1963 ns:  Read: 0011C: 00000000

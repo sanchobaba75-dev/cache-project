@@ -1,0 +1,359 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM_Cntl
+Echeck_bit
+Z0 w1776973243
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx4 work 18 vlsi_testbench_pkg 0 22 K_Pj@MSfQDAGHnNoQbzjK1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 4
+Z5 dC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM
+Z6 8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/VLSI_TestBench_pkg.vhd
+Z7 FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/VLSI_TestBench_pkg.vhd
+l0
+L742 1
+V@oANzE9`z:`PDY6WW`A@L1
+!s100 z;RHW]hYA=4H[TLUEgYYz2
+Z8 OV;C;2020.1;71
+33
+Z9 !s110 1777388913
+!i10b 1
+Z10 !s108 1777388913.000000
+Z11 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/VLSI_TestBench_pkg.vhd|
+Z12 !s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/VLSI_TestBench_pkg.vhd|
+!i113 1
+Z13 o-work work -2008 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Atest
+R1
+R2
+R3
+R4
+Z15 DEx4 work 9 check_bit 0 22 @oANzE9`z:`PDY6WW`A@L1
+!i122 4
+l755
+Z16 L754 36
+Z17 VG>>JQ_<cViZL=IePc9la;3
+Z18 !s100 `UfGCE8=9WMX0IC<odSda2
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Echeck_bus
+R0
+R1
+R2
+R3
+R4
+!i122 4
+R5
+R6
+R7
+l0
+L801 1
+VXT3]c2VhiB]Fa]GgnbS3S1
+!s100 lmCL[MM5@mJ1PV<3GjT:21
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Atest
+R1
+R2
+R3
+R4
+Z19 DEx4 work 9 check_bus 0 22 XT3]c2VhiB]Fa]GgnbS3S1
+!i122 4
+l815
+Z20 L814 36
+Z21 V[X4gDD@OnE]SKTV[X34D?0
+Z22 !s100 0<2OC@ZlWT1b4lEQ8jSgM1
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Eclk_gen
+R0
+R3
+R4
+!i122 4
+R5
+R6
+R7
+l0
+L856 1
+V7WQZnB9f0nzBUhc>aoKKQ2
+!s100 Go1cHY?73T89hN_l47ad`1
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Atest
+R3
+R4
+Z23 DEx4 work 7 clk_gen 0 22 7WQZnB9f0nzBUhc>aoKKQ2
+!i122 4
+l870
+Z24 L868 20
+Z25 Vj;7JJCLonVmc46EcY1Og41
+Z26 !s100 bcZ<ZdRlWERbA<D::[^JV3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Edram
+R0
+R1
+R3
+R4
+!i122 2
+R5
+8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_ent.vhd
+FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_ent.vhd
+l0
+L20 1
+VZ36<G9X1C@W0dd?0X;Xh=0
+!s100 E@NbDaA;]mQo>>kQbSbRl0
+R8
+33
+R9
+!i10b 1
+R10
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_ent.vhd|
+!s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_ent.vhd|
+!i113 1
+R13
+R14
+Asim
+DEx4 work 4 dram 0 22 Z36<G9X1C@W0dd?0X;Xh=0
+R2
+R1
+R3
+R4
+!i122 3
+8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_sim_arch.vhd
+FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_sim_arch.vhd
+l296
+L21 458
+V]Q>ndeMH5XN44ZYkA9JdU0
+!s100 z>2Oo>jaJHF1V@RgQH^lo3
+R8
+33
+R9
+!i10b 1
+R10
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_sim_arch.vhd|
+!s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_sim_arch.vhd|
+!i113 1
+R13
+R14
+Edram_tb
+R0
+R2
+R1
+R3
+R4
+!i122 3
+R5
+Z27 8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_tb.vhd
+Z28 FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_tb.vhd
+l0
+L12 1
+VMe[=]Pm6Z`jRVKBB2QAgf0
+!s100 AaM6QhQ6XYh`hdT<T[4R00
+R8
+33
+R9
+!i10b 1
+R10
+Z29 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_tb.vhd|
+Z30 !s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/DRAM/dram_tb.vhd|
+!i113 1
+R13
+R14
+Atest_bench
+R2
+R1
+R3
+R4
+DEx4 work 7 dram_tb 0 22 Me[=]Pm6Z`jRVKBB2QAgf0
+!i122 3
+l269
+L15 307
+V]`2<LZLnjYdX2fl^>ZWNe3
+!s100 Jz;DG3bnL=dCBS6a[iGbz2
+R8
+33
+R9
+!i10b 1
+R10
+R29
+R30
+!i113 1
+R13
+R14
+Edrive_bit
+R0
+R3
+R4
+!i122 4
+R5
+R6
+R7
+l0
+L679 1
+V3IK93oZ1NX`P;VRN;UWPi2
+!s100 YHoUVe>65Z^nX`5Q2jiaH1
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Atest
+R3
+R4
+Z31 DEx4 work 9 drive_bit 0 22 3IK93oZ1NX`P;VRN;UWPi2
+!i122 4
+l691
+Z32 L690 11
+Z33 V?3O37Qa2nL0m=Yd8UA^FX1
+Z34 !s100 Qk:PajR4;aadO3@[LIUL60
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Edrive_bus
+R0
+R3
+R4
+!i122 4
+R5
+R6
+R7
+l0
+L707 1
+V8J^?1Y?Y6zB:nOUAMDXfg2
+!s100 63JW6Q0kRjYVDgD4`IlDM2
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Atest
+R3
+R4
+Z35 DEx4 work 9 drive_bus 0 22 8J^?1Y?Y6zB:nOUAMDXfg2
+!i122 4
+l720
+Z36 L719 11
+Z37 V<aWI@I<`CVeDW?[`G9cT<0
+Z38 !s100 2TU8B5<W2UIO8fDU?P`K<3
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Pvlsi_testbench_pkg
+R1
+R3
+R4
+!i122 4
+R0
+R5
+R6
+R7
+l0
+L6 1
+VK_Pj@MSfQDAGHnNoQbzjK1
+!s100 kSlGB]IZHO3C65H7@6K?o3
+R8
+33
+b1
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Bbody
+R2
+R1
+R3
+R4
+!i122 4
+l0
+Z39 L159 1
+Z40 VFj9A@iWgGVm<8GO;JmaJM0
+Z41 !s100 ZgAz1mJ:U<cXTBkFZ:P=O2
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14

@@ -1,0 +1,51 @@
+C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/sync_2a_sram_sim_arch.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/sync_2a_sram_sim_arch.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VLSI_TestBench_pkg
+-- Compiling architecture sim of sync_2a_sram
+-- Loading entity sync_2a_sram
+
+} {} {}} C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/VLSI_TestBench_pkg.vhd {2 {vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/VLSI_TestBench_pkg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package VLSI_TestBench_pkg
+** Warning: C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/VLSI_TestBench_pkg.vhd(21): (vcom-1236) Shared variables must be of a protected type.
+-- Compiling package body VLSI_TestBench_pkg
+-- Loading package VLSI_TestBench_pkg
+-- Compiling entity drive_bit
+-- Compiling architecture test of drive_bit
+-- Compiling entity drive_bus
+-- Compiling architecture test of drive_bus
+-- Loading package VLSI_TestBench_pkg
+-- Compiling entity check_bit
+-- Compiling architecture test of check_bit
+-- Compiling entity check_bus
+-- Compiling architecture test of check_bus
+-- Compiling entity clk_gen
+-- Compiling architecture test of clk_gen
+
+} {} {}} C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/sync_2a_sram_ent.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/sync_2a_sram_ent.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity sync_2a_sram
+
+} {} {}} C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/sync_2a_tb.vhd {1 {vcom -work work -2008 -explicit -stats=none C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/SYNC_2A_SRAM/sync_2a_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package VLSI_TestBench_pkg
+-- Compiling entity sync_2a_tb
+-- Compiling architecture test_bench of sync_2a_tb
+
+} {} {}}

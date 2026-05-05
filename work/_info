@@ -1,0 +1,584 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10
+Ecache
+Z1 w1777856282
+Z2 DPx4 work 9 cache_pkg 0 22 zFQCFDBo]e3ba?UHn?VDD2
+Z3 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 517
+R0
+Z6 8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd
+Z7 FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd
+l0
+L6 1
+VO<fbI@eF;:R8d0OkMob0^0
+!s100 TUB66dge8Y`EVY7hPBk?50
+Z8 OV;C;2020.1;71
+33
+Z9 !s110 1777856634
+!i10b 1
+Z10 !s108 1777856633.000000
+Z11 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd|
+Z12 !s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache.vhd|
+!i113 1
+Z13 o-work work -2008 -explicit
+Z14 tExplicit 1 CvgOpt 0
+Artl
+R2
+R3
+R4
+R5
+DEx4 work 5 cache 0 22 O<fbI@eF;:R8d0OkMob0^0
+!i122 517
+l121
+L43 381
+V]hUAVWWhWz1Z=ldJ8zcJ=0
+!s100 e_TCG4d_CLWo0LL2<fL=@1
+R8
+33
+R9
+!i10b 1
+R10
+R11
+R12
+!i113 1
+R13
+R14
+Pcache_pkg
+R3
+R4
+R5
+!i122 518
+Z15 w1777639303
+R0
+Z16 8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd
+Z17 FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd
+l0
+L5 1
+VzFQCFDBo]e3ba?UHn?VDD2
+!s100 PgU`LhJ?Tj0^M=c4Lzoc[2
+R8
+33
+b1
+R9
+!i10b 1
+Z18 !s108 1777856634.000000
+Z19 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd|
+Z20 !s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_pkg.vhd|
+!i113 1
+R13
+R14
+Bbody
+R2
+R3
+R4
+R5
+!i122 518
+l0
+Z21 L24 1
+V_V^a;>FKLohkHLV>Ll5?N1
+!s100 @o7@5;@z:^=0cBbW3H^_90
+R8
+33
+R9
+!i10b 1
+R18
+R19
+R20
+!i113 1
+R13
+R14
+Ecache_tb
+Z22 w1777400308
+Z23 DPx4 work 18 vlsi_testbench_pkg 0 22 K_Pj@MSfQDAGHnNoQbzjK1
+R3
+R4
+R5
+!i122 519
+R0
+Z24 8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd
+Z25 FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd
+l0
+L12 1
+VD3D7fg<=b4NTQ<l@:fF8B1
+!s100 j;QacS]83K3]2o6hH]T1:0
+R8
+33
+R9
+!i10b 1
+R18
+Z26 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd|
+Z27 !s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/cache_tb.vhd|
+!i113 1
+R13
+R14
+Atest_bench
+R23
+R3
+R4
+R5
+DEx4 work 8 cache_tb 0 22 D3D7fg<=b4NTQ<l@:fF8B1
+!i122 519
+l163
+L20 524
+VmRf2H3:[>WI9naYHfUK5d3
+!s100 702gl3nE7JS[o@Oon94QL3
+R8
+33
+R9
+!i10b 1
+R18
+R26
+R27
+!i113 1
+R13
+R14
+Echeck_bit
+Z28 w1771069212
+R3
+R23
+R4
+R5
+!i122 523
+R0
+Z29 8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd
+Z30 FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd
+l0
+L743 1
+V=8o3UO0SnnG?MI>X[O;FF0
+!s100 gkXVRI3Ni7zkm>BnW0Vk?3
+R8
+33
+R9
+!i10b 1
+R18
+Z31 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd|
+Z32 !s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/VLSI_TestBench_pkg.vhd|
+!i113 1
+R13
+R14
+Atest
+R3
+R23
+R4
+R5
+DEx4 work 9 check_bit 0 22 =8o3UO0SnnG?MI>X[O;FF0
+!i122 523
+l756
+L755 36
+VPVb[AEDAE8bnA7Y<G^hK=2
+!s100 =<;g2k;dB=b8A:=<@4J]a3
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Echeck_bus
+R28
+R3
+R23
+R4
+R5
+!i122 523
+R0
+R29
+R30
+l0
+L802 1
+VEBm=P1PNk1l59h8MZ29^33
+!s100 SYnhPm1_o8OE9OYkSh_Bn2
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Atest
+R3
+R23
+R4
+R5
+DEx4 work 9 check_bus 0 22 EBm=P1PNk1l59h8MZ29^33
+!i122 523
+l816
+L815 36
+VNOWzZRn>8UAQG>i6cf30n2
+!s100 ?_c2PQcgZ2Y9K6B5jL66K0
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Eclk_gen
+R28
+R4
+R5
+!i122 523
+R0
+R29
+R30
+l0
+L857 1
+VC7k30QB1<i`z:l:6k;XF61
+!s100 2hE0>FTnmbAjP:SnT]ze;1
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Atest
+R4
+R5
+DEx4 work 7 clk_gen 0 22 C7k30QB1<i`z:l:6k;XF61
+!i122 523
+l871
+L869 20
+VH2@E`Mz>lK388<E]N8N<=2
+!s100 5:2;Hk6Re_o2VmFEW?dO90
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Edram
+Z33 w1776973243
+R3
+R4
+R5
+!i122 521
+R0
+8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd
+FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd
+l0
+L20 1
+VZ36<G9X1C@W0dd?0X;Xh=0
+!s100 E@NbDaA;]mQo>>kQbSbRl0
+R8
+33
+R9
+!i10b 1
+R18
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd|
+!s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_ent.vhd|
+!i113 1
+R13
+R14
+Asim
+DEx4 work 4 dram 0 22 Z36<G9X1C@W0dd?0X;Xh=0
+R23
+R3
+R4
+R5
+!i122 522
+8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd
+FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd
+l296
+L21 458
+V]Q>ndeMH5XN44ZYkA9JdU0
+!s100 z>2Oo>jaJHF1V@RgQH^lo3
+R8
+33
+R9
+!i10b 1
+R18
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd|
+!s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_sim_arch.vhd|
+!i113 1
+R13
+R14
+Edram_cntl
+Z34 w1776973273
+R3
+R4
+R5
+!i122 520
+R0
+Z35 8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd
+Z36 FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd
+l0
+L6 1
+VoI=D:85T4Mbj3ciF;bk_B2
+!s100 ?EYIaFFY`OMD><8[nM`]<3
+R8
+33
+R9
+!i10b 1
+R18
+Z37 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd|
+Z38 !s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/dram_cntl.vhd|
+!i113 1
+R13
+R14
+Artl
+R3
+R4
+R5
+DEx4 work 9 dram_cntl 0 22 oI=D:85T4Mbj3ciF;bk_B2
+!i122 520
+l60
+L31 243
+V[F5E]2DbR29TKZAU=`T^?0
+!s100 CAEC4h<jhe?nA^ja@8:6=3
+R8
+33
+R9
+!i10b 1
+R18
+R37
+R38
+!i113 1
+R13
+R14
+Edrive_bit
+R28
+R4
+R5
+!i122 523
+R0
+R29
+R30
+l0
+L680 1
+V?5=5MbC2H3^XSNWFGU7lN3
+!s100 BFcX44?TR]TC2Ho5N5Vh20
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Atest
+R4
+R5
+DEx4 work 9 drive_bit 0 22 ?5=5MbC2H3^XSNWFGU7lN3
+!i122 523
+l692
+L691 11
+V<BTaa9d5XCF^P=aAcBeCV3
+!s100 5o[ET_X;JYC=mK`LimA4B2
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Edrive_bus
+R28
+R4
+R5
+!i122 523
+R0
+R29
+R30
+l0
+L708 1
+VF^nc;C]E0>l0<Ed9?VGP00
+!s100 f;JfPbW<@Qj`7A^fM4AKC3
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Atest
+R4
+R5
+DEx4 work 9 drive_bus 0 22 F^nc;C]E0>l0<Ed9?VGP00
+!i122 523
+l721
+L720 11
+VB2BlBG7XQ_K?2CBcC`XjL3
+!s100 d1liDjC>Y8A:MEXmz^c]Z1
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Esync_2a_sram
+Z39 w1776978792
+R3
+R4
+R5
+!i122 522
+R0
+8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd
+FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd
+l0
+R21
+V`JP_mmD72GWW?2IhD@Ub>0
+!s100 3TERNgjYWCzOnL_a4gTWQ2
+R8
+33
+R9
+!i10b 1
+R18
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd|
+!s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_ent.vhd|
+!i113 1
+R13
+R14
+Asim
+DEx4 work 12 sync_2a_sram 0 22 `JP_mmD72GWW?2IhD@Ub>0
+R23
+R3
+R4
+R5
+!i122 523
+8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd
+FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd
+l297
+L21 403
+Vo2>ggB:M`aA]oaGXH=3LQ1
+!s100 C]gheVfP5X<ozGammD_2z2
+R8
+33
+R9
+!i10b 1
+R18
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd|
+!s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_2a_sram_sim_arch.vhd|
+!i113 1
+R13
+R14
+Esync_sp_sram
+R28
+R3
+R4
+R5
+!i122 524
+R0
+8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_sp_sram_ent.vhd
+FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_sp_sram_ent.vhd
+l0
+L23 1
+V5Y_XTQNh`8RaIbg81iK3^3
+!s100 WVSEIegmYh<HPNNz9;?173
+R8
+33
+Z40 !s110 1777856635
+!i10b 1
+R18
+!s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_sp_sram_ent.vhd|
+!s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_sp_sram_ent.vhd|
+!i113 1
+R13
+R14
+Asim
+Z41 w1777734408
+Z42 DEx4 work 12 sync_sp_sram 0 22 5Y_XTQNh`8RaIbg81iK3^3
+R23
+R3
+R4
+R5
+!i122 525
+Z43 8C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_sp_sram_sim_arch.vhd
+Z44 FC:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_sp_sram_sim_arch.vhd
+l294
+Z45 L21 390
+Z46 Vaok2=G]aiQAY3nIY]K@U93
+Z47 !s100 8Q9al6IVU98MM?a[Y`<VK2
+R8
+33
+R40
+!i10b 1
+!s108 1777856635.000000
+Z48 !s90 -reportprogress|300|-work|work|-2008|-explicit|-stats=none|C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_sp_sram_sim_arch.vhd|
+Z49 !s107 C:/Users/mihre/Desktop/ECE_8405_Labs/Lab10/VHDLsrc/sync_sp_sram_sim_arch.vhd|
+!i113 1
+R13
+R14
+Pvlsi_testbench_pkg
+R3
+R4
+R5
+!i122 523
+R28
+R0
+R29
+R30
+l0
+L6 1
+VK_Pj@MSfQDAGHnNoQbzjK1
+!s100 kSlGB]IZHO3C65H7@6K?o3
+R8
+33
+b1
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14
+Bbody
+R23
+R3
+R4
+R5
+!i122 523
+l0
+L159 1
+VfYS@c6^RJFD9VUMW`l7cS1
+!s100 V8fhY[h2JT_Z1_<c^NWMO0
+R8
+33
+R9
+!i10b 1
+R18
+R31
+R32
+!i113 1
+R13
+R14

@@ -1,0 +1,465 @@
+# Test cache read miss then hit
+# rst0 cs r1w0 size   addr     wdata   rdata  rdy
+   0    0   1   0   00000000 00000000 -------- 0
+   0    0   1   0   00000000 00000000 -------- 0
+   0    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    1   1   0   00000514 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 -------- 0
+   1    0   1   0   00000000 00000000 FFFFFFFF 1
+   1    1   1   0   0000051c 00000000 -------- 0
+   1    0   1   0   00000000 00000000 FFFFFFFB 1
+   1    0   1   0   00000000 00000000 -------- 0
+
+
+   library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.cache_pkg.all;
+
+entity cache is
+  generic (
+    NUM_WAYS            : integer := 2;
+    NUM_SETS            : integer := 8;
+    NUM_SETS_BITS       : integer := 3;
+    NUM_TAG_BITS        : integer := 5;
+    NUM_LINE_WORDS      : integer := 4;
+    NUM_LINE_WORDS_BITS : integer := 2;
+    WORD_WIDTH          : integer := 32;
+    ADDR_WIDTH          : integer := 32;
+    RD_ACCESS           : time    := 4 ns
+  );
+  port (
+    rst0       : in  std_logic;
+    clk        : in  std_logic;
+    clkSync    : in  std_logic;
+    cpu_cs     : in  std_logic;
+    cpu_r1w0   : in  std_logic;
+    cpu_size   : in  std_logic_vector(1 downto 0);
+    cpu_addr   : in  std_logic_vector(ADDR_WIDTH-1 downto 0);
+    cpu_wdata  : in  std_logic_vector(WORD_WIDTH-1 downto 0);
+    cpu_rdata  : out std_logic_vector(WORD_WIDTH-1 downto 0);
+    cpu_hit    : out std_logic;
+    cpu_miss   : out std_logic;
+    cpu_ready  : out std_logic;
+    dram_start : out std_logic;
+    dram_r1w0  : out std_logic;
+    dram_type  : out std_logic_vector(1 downto 0);
+    dram_size  : out std_logic_vector(1 downto 0);
+    dram_addr  : out std_logic_vector(ADDR_WIDTH-1 downto 0);
+    dram_wdata : out std_logic_vector(WORD_WIDTH-1 downto 0);
+    dram_rdata : in  std_logic_vector(WORD_WIDTH-1 downto 0);
+    dram_oe0   : out std_logic;
+    dram_latch : in  std_logic
+  );
+end cache;
+
+architecture rtl of cache is
+
+  component sync_2a_sram
+    generic (
+      ENDIAN         : integer := 1;
+      WIDTH          : integer := 32;
+      BITS_PER_WE    : integer := 8;
+      WORDS          : integer := 32;
+      BASE_OFFSET    : integer := 0;
+      ADDR_BITS      : integer := 5;
+      DEFAULT_STATE  : std_logic := '0';
+      SIM_INIT_FILE  : string  := "";
+      RD_ACCESS      : time    := 4 ns
+    );
+    port (
+      clk   : in  std_logic;
+      cs    : in  std_logic;
+      wAddr : in  std_logic_vector(ADDR_BITS-1 downto 0);
+      rAddr : in  std_logic_vector(ADDR_BITS-1 downto 0);
+      wr_en : in  std_logic_vector((WIDTH/BITS_PER_WE)-1 downto 0);
+      wdata : in  std_logic_vector(WIDTH-1 downto 0);
+      rdata : out std_logic_vector(WIDTH-1 downto 0)
+    );
+  end component;
+
+  function get_index(a : std_logic_vector) return std_logic_vector is
+  begin return a(6 downto 4); end function;
+  function get_tag(a : std_logic_vector) return std_logic_vector is
+  begin return a(11 downto 7); end function;
+  function get_word_off(a : std_logic_vector) return std_logic_vector is
+  begin return a(3 downto 2); end function;
+
+  type state_t is (S_IDLE, S_COMPARE, S_WB, S_FILL, S_WAIT_TAG, S_FINISH);
+  signal state : state_t;
+
+  signal req_addr  : std_logic_vector(ADDR_WIDTH-1 downto 0);
+  signal req_wdata : std_logic_vector(WORD_WIDTH-1 downto 0);
+  signal req_r1w0  : std_logic;
+  signal req_size  : std_logic_vector(1 downto 0);
+
+  signal victim  : std_logic;
+  signal hit_way : std_logic;
+  signal is_hit  : std_logic;
+
+  signal tag_cs    : std_logic;
+  signal tag_waddr : std_logic_vector(2 downto 0);
+  signal tag_raddr : std_logic_vector(2 downto 0);
+  signal tag_we    : std_logic_vector(1 downto 0);
+  signal tag_wdata : std_logic_vector(15 downto 0);
+  signal tag_rdata : std_logic_vector(15 downto 0);
+
+  signal cur_lru : std_logic;
+  signal cur_v0  : std_logic;
+  signal cur_d0  : std_logic;
+  signal cur_t0  : std_logic_vector(4 downto 0);
+  signal cur_v1  : std_logic;
+  signal cur_d1  : std_logic;
+  signal cur_t1  : std_logic_vector(4 downto 0);
+
+  signal d0_cs, d1_cs       : std_logic;
+  signal d0_waddr, d1_waddr : std_logic_vector(4 downto 0);
+  signal d0_raddr, d1_raddr : std_logic_vector(4 downto 0);
+  signal d0_we,  d1_we      : std_logic_vector(3 downto 0);
+  signal d0_wdata, d1_wdata : std_logic_vector(31 downto 0);
+  signal d0_rdata, d1_rdata : std_logic_vector(31 downto 0);
+
+  signal burst_cnt : unsigned(1 downto 0);
+
+  -- dram_start hold: stays high from when we assert it until
+  -- dram_latch first fires (proving MEMclk domain received it)
+  signal dram_start_r : std_logic;
+  signal start_sent   : std_logic;  -- '1' after first latch seen
+
+  -- dram_latch edge detect on clkSync (stable sample point)
+  signal latch_s0 : std_logic;
+  signal latch_s1 : std_logic;
+  signal latch_re : std_logic;  -- one clkSync-wide pulse per word
+
+begin
+
+  TAG_RAM : sync_2a_sram
+    generic map (
+      ENDIAN => 1, WIDTH => 16, BITS_PER_WE => 8,
+      WORDS  => 8,  BASE_OFFSET => 0, ADDR_BITS => 3,
+      DEFAULT_STATE => '0', RD_ACCESS => RD_ACCESS
+    )
+    port map (
+      clk   => clk,       cs    => tag_cs,
+      wAddr => tag_waddr, rAddr => tag_raddr,
+      wr_en => tag_we,    wdata => tag_wdata,
+      rdata => tag_rdata
+    );
+
+  DATA_W0 : sync_2a_sram
+    generic map (
+      ENDIAN => 1, WIDTH => 32, BITS_PER_WE => 8,
+      WORDS  => 32, BASE_OFFSET => 0, ADDR_BITS => 5,
+      DEFAULT_STATE => '0', RD_ACCESS => RD_ACCESS
+    )
+    port map (
+      clk   => clk,      cs    => d0_cs,
+      wAddr => d0_waddr, rAddr => d0_raddr,
+      wr_en => d0_we,    wdata => d0_wdata, rdata => d0_rdata
+    );
+
+  DATA_W1 : sync_2a_sram
+    generic map (
+      ENDIAN => 1, WIDTH => 32, BITS_PER_WE => 8,
+      WORDS  => 32, BASE_OFFSET => 0, ADDR_BITS => 5,
+      DEFAULT_STATE => '0', RD_ACCESS => RD_ACCESS
+    )
+    port map (
+      clk   => clk,      cs    => d1_cs,
+      wAddr => d1_waddr, rAddr => d1_raddr,
+      wr_en => d1_we,    wdata => d1_wdata, rdata => d1_rdata
+    );
+
+  cur_lru <= tag_rdata(0);
+  cur_v0  <= tag_rdata(1);
+  cur_d0  <= tag_rdata(2);
+  cur_t0  <= tag_rdata(7 downto 3);
+  cur_v1  <= tag_rdata(8);
+  cur_d1  <= tag_rdata(9);
+  cur_t1  <= tag_rdata(14 downto 10);
+
+  process(req_addr, cur_v0, cur_t0, cur_v1, cur_t1) is
+    variable rt : std_logic_vector(4 downto 0);
+  begin
+    rt := get_tag(req_addr);
+    if (cur_v0 = '1') and (cur_t0 = rt) then
+      is_hit <= '1'; hit_way <= '0';
+    elsif (cur_v1 = '1') and (cur_t1 = rt) then
+      is_hit <= '1'; hit_way <= '1';
+    else
+      is_hit <= '0'; hit_way <= '0';
+    end if;
+  end process;
+
+  -- Drive start from register
+  dram_start <= dram_start_r;
+
+
+  process(clkSync, rst0) is
+  begin
+    if rst0 = '0' then
+      latch_s0 <= '0';
+      latch_s1 <= '0';
+    elsif rising_edge(clkSync) then
+      latch_s0 <= dram_latch;
+      latch_s1 <= latch_s0;
+    end if;
+  end process;
+
+  latch_re <= latch_s0 and (not latch_s1);
+
+  ----------------------------------------------------------------
+  -- Main FSM on CPUclk
+  ----------------------------------------------------------------
+  process(clk, rst0) is
+    variable line_base : std_logic_vector(ADDR_WIDTH-1 downto 0);
+  begin
+    if rst0 = '0' then
+      state        <= S_IDLE;
+      cpu_ready    <= '0';
+      cpu_hit      <= '0';
+      cpu_miss     <= '0';
+      cpu_rdata    <= (others => '0');
+      dram_start_r <= '0';
+      start_sent   <= '0';
+      dram_r1w0    <= '1';
+      dram_type    <= "00";
+      dram_size    <= "00";
+      dram_addr    <= (others => '0');
+      dram_wdata   <= (others => '0');
+      dram_oe0     <= '1';
+      burst_cnt    <= (others => '0');
+      victim       <= '0';
+      tag_cs       <= '0'; tag_we <= "00";
+      tag_waddr    <= (others => '0'); tag_raddr <= (others => '0');
+      tag_wdata    <= (others => '0');
+      d0_cs <= '0'; d1_cs <= '0';
+      d0_we <= "0000"; d1_we <= "0000";
+      d0_waddr <= (others => '0'); d0_raddr <= (others => '0');
+      d1_waddr <= (others => '0'); d1_raddr <= (others => '0');
+      d0_wdata <= (others => '0'); d1_wdata <= (others => '0');
+      req_addr  <= (others => '0'); req_wdata <= (others => '0');
+      req_r1w0  <= '1'; req_size <= "00";
+
+    elsif rising_edge(clk) then
+      cpu_ready    <= '0';
+      cpu_hit      <= '0';
+      cpu_miss     <= '0';
+      -- dram_start_r held unless explicitly changed below
+      tag_we       <= "00";
+      d0_we        <= "0000";
+      d1_we        <= "0000";
+      tag_cs       <= '1';
+      d0_cs        <= '1';
+      d1_cs        <= '1';
+
+      case state is
+
+        when S_IDLE =>
+          dram_start_r <= '0';
+          dram_oe0     <= '1';
+          if cpu_cs = '1' then
+            req_addr  <= cpu_addr;
+            req_wdata <= cpu_wdata;
+            req_r1w0  <= cpu_r1w0;
+            req_size  <= cpu_size;
+            tag_raddr <= get_index(cpu_addr);
+            d0_raddr  <= get_index(cpu_addr) & get_word_off(cpu_addr);
+            d1_raddr  <= get_index(cpu_addr) & get_word_off(cpu_addr);
+            state     <= S_COMPARE;
+          end if;
+
+        when S_COMPARE =>
+          if is_hit = '1' then
+            cpu_hit   <= '1';
+            cpu_ready <= '1';
+            if req_r1w0 = '1' then
+              if hit_way = '0' then cpu_rdata <= d0_rdata;
+              else                  cpu_rdata <= d1_rdata;
+              end if;
+            else
+              if hit_way = '0' then
+                d0_waddr <= get_index(req_addr) & get_word_off(req_addr);
+                d0_wdata <= req_wdata;
+                d0_we    <= "1111";
+              else
+                d1_waddr <= get_index(req_addr) & get_word_off(req_addr);
+                d1_wdata <= req_wdata;
+                d1_we    <= "1111";
+              end if;
+              tag_waddr <= get_index(req_addr);
+              if hit_way = '0' then
+                tag_wdata <= pack_tag_word('1', cur_v0,'1',cur_t0,
+                                           cur_v1,cur_d1,cur_t1);
+              else
+                tag_wdata <= pack_tag_word('0', cur_v0,cur_d0,cur_t0,
+                                           cur_v1,'1',cur_t1);
+              end if;
+              tag_we <= "11";
+            end if;
+            state <= S_FINISH;
+
+          else
+            cpu_miss  <= '1';
+            victim    <= cur_lru;
+            burst_cnt <= (others => '0');
+            start_sent <= '0';
+
+            if (cur_lru = '0' and cur_v0 = '1' and cur_d0 = '1') then
+              line_base := req_addr;
+              line_base(11 downto 7) := cur_t0;
+              line_base(3 downto 0)  := (others => '0');
+              dram_addr    <= line_base;
+              dram_r1w0    <= '0';
+              dram_type    <= "01";
+              dram_size    <= "00";
+              dram_oe0     <= '1';
+              dram_start_r <= '1';
+              d0_raddr     <= get_index(req_addr) & "00";
+              dram_wdata   <= d0_rdata;
+              state        <= S_WB;
+
+            elsif (cur_lru = '1' and cur_v1 = '1' and cur_d1 = '1') then
+              line_base := req_addr;
+              line_base(11 downto 7) := cur_t1;
+              line_base(3 downto 0)  := (others => '0');
+              dram_addr    <= line_base;
+              dram_r1w0    <= '0';
+              dram_type    <= "01";
+              dram_size    <= "00";
+              dram_oe0     <= '1';
+              dram_start_r <= '1';
+              d1_raddr     <= get_index(req_addr) & "00";
+              dram_wdata   <= d1_rdata;
+              state        <= S_WB;
+
+            else
+              -- Clean victim: fill from DRAM
+              line_base := req_addr;
+              line_base(3 downto 0) := (others => '0');
+              dram_addr    <= line_base;
+              dram_r1w0    <= '1';
+              dram_type    <= "01";
+              dram_size    <= "00";
+              dram_oe0     <= '0';    -- DRAM drives bus for read
+              dram_start_r <= '1';   -- begin asserting start
+              state        <= S_FILL;
+            end if;
+          end if;
+
+        when S_WB =>
+          -- Hold start until first latch confirms controller saw it
+          if start_sent = '0' then
+            dram_start_r <= '1';
+          end if;
+          if latch_re = '1' then
+            dram_start_r <= '0';
+            start_sent   <= '1';
+            if victim = '0' then
+              d0_raddr   <= get_index(req_addr) & std_logic_vector(burst_cnt);
+              dram_wdata <= d0_rdata;
+            else
+              d1_raddr   <= get_index(req_addr) & std_logic_vector(burst_cnt);
+              dram_wdata <= d1_rdata;
+            end if;
+            if burst_cnt = "11" then
+              line_base := req_addr;
+              line_base(3 downto 0) := (others => '0');
+              dram_addr    <= line_base;
+              dram_r1w0    <= '1';
+              dram_type    <= "01";
+              dram_size    <= "00";
+              dram_oe0     <= '0';
+              dram_start_r <= '1';
+              start_sent   <= '0';
+              burst_cnt    <= (others => '0');
+              state        <= S_FILL;
+            else
+              burst_cnt <= burst_cnt + 1;
+            end if;
+          end if;
+
+        when S_FILL =>
+          -- Hold start high until controller responds with first latch
+          if start_sent = '0' then
+            dram_start_r <= '1';
+          end if;
+
+          if latch_re = '1' then
+            dram_start_r <= '0';
+            start_sent   <= '1';
+            dram_oe0     <= '0';   -- keep DRAM driving
+            if victim = '0' then
+              d0_waddr <= get_index(req_addr) & std_logic_vector(burst_cnt);
+              d0_wdata <= dram_rdata;
+              d0_we    <= "1111";
+            else
+              d1_waddr <= get_index(req_addr) & std_logic_vector(burst_cnt);
+              d1_wdata <= dram_rdata;
+              d1_we    <= "1111";
+            end if;
+
+            if burst_cnt = "11" then
+              -- All 4 words filled. Write tag and re-read for compare.
+              tag_waddr <= get_index(req_addr);
+              if victim = '0' then
+                tag_wdata <= pack_tag_word('1', '1','0',get_tag(req_addr),
+                                           cur_v1,cur_d1,cur_t1);
+              else
+                tag_wdata <= pack_tag_word('0', cur_v0,cur_d0,cur_t0,
+                                           '1','0',get_tag(req_addr));
+              end if;
+              tag_we    <= "11";
+              tag_raddr <= get_index(req_addr);
+              d0_raddr  <= get_index(req_addr) & get_word_off(req_addr);
+              d1_raddr  <= get_index(req_addr) & get_word_off(req_addr);
+              burst_cnt <= (others => '0');
+              state     <= S_WAIT_TAG;
+            else
+              burst_cnt <= burst_cnt + 1;
+            end if;
+          end if;
+        when S_WAIT_TAG =>
+        -- tag RAM output is now valid, data RAM already addressed
+          state <= S_COMPARE;
+        when S_FINISH =>
+          dram_oe0 <= '1';
+          state    <= S_IDLE;
+
+        when others =>
+          state <= S_IDLE;
+
+      end case;
+    end if;
+  end process;
+
+end architecture rtl;
