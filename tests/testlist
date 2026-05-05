@@ -1,1 +1,5 @@
 tests/test_cache_read_miss_then_hit
+tests/test_cache_read_miss_word1
+tests/test_cache_read_miss_word3
+tests/test_cache_read_miss_then_2hits
+tests/test_cache_read_rdy_deasserts
