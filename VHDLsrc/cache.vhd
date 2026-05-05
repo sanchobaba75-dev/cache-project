@@ -421,3 +421,5 @@ begin
   end process;
 
 end architecture rtl;
+
+-- BUG: investigating cache miss issue
